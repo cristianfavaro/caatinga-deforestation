@@ -1,3 +1,4 @@
+
 // using d3 for convenience
 var main = d3.select("main");
 var scrolly = main.select("#scrolly");
@@ -7,23 +8,6 @@ var step = article.selectAll(".step");
 
 // initialize the scrollama
 var scroller = scrollama();
-
-class Listener{
-    constructor() {
-        this.stepEnterListeners = [];
-        this.stepExitListeners = [];
-    };
-
-    addStepEnter(listener){
-        this.stepEnterListeners.push(listener)
-    };
-
-    addStepExit(listener){
-        this.stepExitListeners.push(listener)
-    };
-};
-
-const listeners = new Listener();
 
 // generic window resize listener event
 function handleResize() {
@@ -40,11 +24,10 @@ function handleResize() {
 
     // 3. tell scrollama to update new element dimensions
     scroller.resize();
-};
-
+}
 
 // scrollama event handlers
-listeners.addStepEnter( response => {
+function handleStepEnter(response) {
     console.log(response);
     // response = { element, direction, index }
 
@@ -55,14 +38,7 @@ listeners.addStepEnter( response => {
 
     // update graphic based on step
     figure.select("p").text(response.index + 1);
-})
-
-
-
-listeners.addStepExit( response => {
-    console.log('passeio step exit enter', response)
-})
-
+}
 
 function init() {
 
@@ -76,15 +52,10 @@ function init() {
         .setup({
             step: "#scrolly article .step",
             offset: 0.33,
-            debug: true
+            debug: false
         })
-        .onStepEnter(response => listeners.stepEnterListeners.map(listener => {
-            listener(response)
-        }))
-        .onStepExit(response => listeners.stepExitListeners.map(listener => {
-            listener(response)
-        }))
+        .onStepEnter(handleStepEnter);
 }
 
 // kick things off
-åinit();
+init();
