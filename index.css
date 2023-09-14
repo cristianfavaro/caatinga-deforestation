@@ -75,15 +75,17 @@ a:hover {
 
 /* AJUSTE PÁGINA */
 
-#scrolly {
+/* #scrolly {
     position: relative;
     background-color: #f3f3f3;
     padding: 1rem;
-}
+} */
 
 article {
     position: relative;
-    padding: 0;
+    padding: 1rem;
+    margin: 0 1rem;
+    background-color: #f3f3f3;
     /* margin: 1 auto; */
 }
 
@@ -115,21 +117,33 @@ figure p {
 }
 
 .step {
-    margin: 0 auto 2rem auto;
+    margin: 2rem 0;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
     position: relative;
     display: flex;
 }
 
 .step >div{
     width: 100%;
+    background-color: greenyellow;
 }
 
 .step-center{
-    width: 50%;
-    margin: 0 auto;
+    width: 40%;
+    justify-content: center;
 }
+
+.step-left{
+    width: 40%;
+    justify-content: left;
+}
+
+.step-right{
+    width: 40%;
+    justify-content: right;
+}
+
 
 .step:last-child {
     margin-bottom: 0;
