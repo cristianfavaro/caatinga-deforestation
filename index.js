@@ -1,9 +1,9 @@
 
 // using d3 for convenience
 var main = d3.select("main");
-var scrolly = main.select("#scrolly");
-var figure = scrolly.select("figure");
-var article = scrolly.select("article");
+// var scrolly = main.select("#scrolly");
+var figure = main.select("figure");
+var article = main.select("article");
 var step = article.selectAll(".step");
 
 // initialize the scrollama
@@ -50,7 +50,7 @@ function init() {
     // 3. bind scrollama event handlers (this can be chained like below)
     scroller
         .setup({
-            step: "#scrolly article .step",
+            step: "article .step",
             offset: 0.33,
             debug: false
         })
