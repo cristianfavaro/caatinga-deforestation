@@ -84,8 +84,7 @@ a:hover {
 article {
     position: relative;
     padding: 0;
-    max-width: 20rem;
-    margin: 0 auto;
+    /* margin: 1 auto; */
 }
 
 figure {
@@ -119,6 +118,17 @@ figure p {
     margin: 0 auto 2rem auto;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+}
+
+.step >div{
+    width: 100%;
+}
+
+.step-center{
+    width: 50%;
+    margin: 0 auto;
 }
 
 .step:last-child {
