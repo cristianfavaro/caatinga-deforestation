@@ -25,7 +25,6 @@ class Listener{
 
 const listeners = new Listener();
 
-
 // generic window resize listener event
 function handleResize() {
     // 1. update height of step elements
@@ -41,7 +40,7 @@ function handleResize() {
 
     // 3. tell scrollama to update new element dimensions
     scroller.resize();
-}
+};
 
 
 // scrollama event handlers
