@@ -129,20 +129,15 @@ figure p {
     background-color: greenyellow;
 }
 
-.step-center{
-    width: 40%;
-    justify-content: center;
-}
+.step-center >div,
+.step-left > div,
+.step-right > div {width: 40%;}
 
-.step-left{
-    width: 40%;
-    justify-content: left;
-}
+.step-center{justify-content: center}
 
-.step-right{
-    width: 40%;
-    justify-content: right;
-}
+.step-left{justify-content: left;}
+
+.step-right{justify-content: right;}
 
 
 .step:last-child {
