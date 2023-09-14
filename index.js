@@ -24,7 +24,7 @@ function handleResize() {
         .style("top", figureMarginTop + "px");
 
     figure2
-        .style("height", figureHeight + "px")
+        .style("height", "400" + "px")
         .style("top", figureMarginTop + "px");
 
     // 3. tell scrollama to update new element dimensions
