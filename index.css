@@ -117,7 +117,7 @@ figure p {
 }
 
 .step {
-    margin: 2rem 0;
+    margin: 1rem;
     color: #fff;
     opacity: 0.8;
     position: relative;
@@ -161,4 +161,36 @@ figure p {
 
 section {
     margin: 2rem;
+}
+
+#group-2{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #f3f3f3;
+    padding: 0 1rem;
+}
+
+#group-2>* {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+#group-2 >div{
+    position: relative;
+    padding: 0 1rem;
+    max-width: 20rem;
+}
+
+#group-2 figure {
+    position: sticky;
+    width: 100%;
+    margin: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #8a8a8a;
+    z-index: 0;
 }

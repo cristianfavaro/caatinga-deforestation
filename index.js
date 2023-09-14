@@ -2,7 +2,8 @@
 // using d3 for convenience
 var main = d3.select("main");
 // var scrolly = main.select("#scrolly");
-var figure = main.select("figure");
+var figure = main.select("#group-1 figure");
+var figure2 = main.select("#group-2 figure");
 var article = main.select("article");
 var step = article.selectAll(".step");
 
@@ -22,13 +23,16 @@ function handleResize() {
         .style("height", figureHeight + "px")
         .style("top", figureMarginTop + "px");
 
+    figure2
+        .style("height", figureHeight + "px")
+        .style("top", figureMarginTop + "px");
+
     // 3. tell scrollama to update new element dimensions
     scroller.resize();
 }
 
 // scrollama event handlers
 function handleStepEnter(response) {
-    console.log(response);
     // response = { element, direction, index }
 
     // add color to current step only
