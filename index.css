@@ -197,3 +197,10 @@ section {
     background-color: #8a8a8a;
     z-index: 0;
 }
+
+
+/* MAP Config */
+
+#map{
+    height: 400px;
+}

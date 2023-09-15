@@ -29,6 +29,7 @@
         <div id="group-1">
 
           <figure>
+            <div id="map"></div>
             <p>0</p>
           </figure>
           <div class="step" data-step="1">
@@ -99,6 +100,16 @@
         
       </article>		
     </main>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiY3Jpc2ZhdmFybyIsImEiOiJjbG0xOTFpcm8ycGcyM2ZwaHJrODNxcndhIn0.H8Xu-AtLW760J80cNDJGoQ';
+      const map = new mapboxgl.Map({
+      container: 'map', // container ID
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      center: [-74.5, 40], // starting position [lng, lat]
+      zoom: 9 // starting zoom
+      });
+    </script>
 
     <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
     <script src="https://unpkg.com/scrollama@^3"></script>
