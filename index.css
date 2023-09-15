@@ -158,6 +158,9 @@ figure p {
 
 
 /* MEUS AJUSTES */
+.hidden{
+    display: none;
+}
 
 section {
     margin: 2rem;

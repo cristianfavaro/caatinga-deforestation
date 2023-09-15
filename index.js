@@ -7,8 +7,29 @@ var figure2 = main.select("#group-2 figure");
 var article = main.select("article");
 var step = article.selectAll(".step");
 
+
+function setInnerHTML(elm, html) {
+    elm.innerHTML = html;
+    
+    Array.from(elm.querySelectorAll("script"))
+      .forEach( oldScriptEl => {
+        const newScriptEl = document.createElement("script");
+        
+        Array.from(oldScriptEl.attributes).forEach( attr => {
+          newScriptEl.setAttribute(attr.name, attr.value) 
+        });
+        
+        const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+        newScriptEl.appendChild(scriptText);
+        
+        oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+    });
+  }
+
 // initialize the scrollama
 var scroller = scrollama();
+
+
 
 // generic window resize listener event
 function handleResize() {
@@ -31,6 +52,47 @@ function handleResize() {
     scroller.resize();
 }
 
+
+
+var layout = {
+    // autosize: false,
+    height: 400,
+    margin: {
+      l: 0,
+      r: 0,
+      b: 0,
+      t: 0,
+      pad: 0
+    },
+    // paper_bgcolor: '#7f7f7f',
+    // plot_bgcolor: '#c7c7c7'
+  };
+
+var data = [{
+    type: "treemap",
+    labels: ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+    parents: ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ]
+}]
+
+Plotly.newPlot('myDiv', data, layout)
+
+function updateTreeMap(response){
+    
+    if(response.index == 3){
+        data[0]["labels"] = ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"]
+        data[0]["parents"] = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ]
+            
+        Plotly.redraw('myDiv')
+    }
+    // console.log('pasei aqui', response)
+    if(response.index == 4){
+        data[0]["labels"] = ["Eve", "Cain", "Seth", "Enos", "Noam"]
+        data[0]["parents"] = ["", "Eve", "Eve", "Seth", "Seth"]
+            
+        Plotly.redraw('myDiv')
+    }
+}
+
 // scrollama event handlers
 function handleStepEnter(response) {
     // response = { element, direction, index }
@@ -42,6 +104,8 @@ function handleStepEnter(response) {
 
     // update graphic based on step
     figure.select("p").text(response.index + 1);
+
+    updateTreeMap(response)
 }
 
 function init() {
