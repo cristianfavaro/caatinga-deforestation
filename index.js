@@ -1,35 +1,14 @@
 
 // using d3 for convenience
 var main = d3.select("main");
-// var scrolly = main.select("#scrolly");
 var figure = main.select("#group-1 figure");
 var figure2 = main.select("#group-2 figure");
 var article = main.select("article");
 var step = article.selectAll(".step");
 
 
-function setInnerHTML(elm, html) {
-    elm.innerHTML = html;
-    
-    Array.from(elm.querySelectorAll("script"))
-      .forEach( oldScriptEl => {
-        const newScriptEl = document.createElement("script");
-        
-        Array.from(oldScriptEl.attributes).forEach( attr => {
-          newScriptEl.setAttribute(attr.name, attr.value) 
-        });
-        
-        const scriptText = document.createTextNode(oldScriptEl.innerHTML);
-        newScriptEl.appendChild(scriptText);
-        
-        oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
-    });
-  }
-
 // initialize the scrollama
 var scroller = scrollama();
-
-
 
 // generic window resize listener event
 function handleResize() {
@@ -53,42 +32,62 @@ function handleResize() {
 }
 
 
-
+// Treemap data
 var layout = {
-    // autosize: false,
+    autosize: true,
     height: 400,
-    margin: {
-      l: 0,
-      r: 0,
-      b: 0,
-      t: 0,
-      pad: 0
-    },
-    // paper_bgcolor: '#7f7f7f',
-    // plot_bgcolor: '#c7c7c7'
-  };
+    margin: {l: 0,r: 0,b: 0,t: 0},
+};
+
+parents = ["", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral"]
+labels = [
+    "Total geral", "Administração Ambiental", "Cadastro Técnico Federal",
+    "Controle ambiental", "Fauna", "Flora", "Licenciamento", "Ordenamento urbano e Contr. patrim.",
+    "Outras", "Pesca", "Qualidade Ambiental", "Unidade de Conservação",
+]
+values = [ 19180161.23, 121500.00, 693200.00, 4227640.00, 1746300.00, 8439992.63, 1136322.50, 413000.00, 1752586.10, 411110.00, 7000.00, 231510.00]
 
 var data = [{
-    type: "treemap",
-    labels: ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-    parents: ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ]
+  type: 'treemap',
+  branchvalues: "total",
+  labels: labels,
+  values: values, 
+  parents: parents,
+  marker: {colors: ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]}
 }]
+
 
 Plotly.newPlot('myDiv', data, layout)
 
 function updateTreeMap(response){
     
     if(response.index == 3){
-        data[0]["labels"] = ["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"]
-        data[0]["parents"] = ["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ]
-            
+        data[0]["labels"] = labels
+        data[0]["parents"] = parents
+        data[0]["values"] = values
         Plotly.redraw('myDiv')
     }
-    // console.log('pasei aqui', response)
+    
     if(response.index == 4){
-        data[0]["labels"] = ["Eve", "Cain", "Seth", "Enos", "Noam"]
-        data[0]["parents"] = ["", "Eve", "Eve", "Seth", "Seth"]
-            
+        data[0]["labels"] = [
+            "Total geral",
+            "Sem info",
+            "Amazonia",
+            "Caatinga",
+            "Cerrado",
+            "Costeiro e Marinho",
+            "Mata Atlantica",
+        ]
+        data[0]["parents"] = ["", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral"];
+        data[0]["values"] = [
+            195462387.76,
+            114790225.23,
+            5198078.52,
+            18641061.23,
+            8539399.58,
+            35411234.17,
+            12882389.03,
+        ]
         Plotly.redraw('myDiv')
     }
 }
@@ -96,7 +95,6 @@ function updateTreeMap(response){
 // scrollama event handlers
 function handleStepEnter(response) {
     // response = { element, direction, index }
-
     // add color to current step only
     step.classed("is-active", function (d, i) {
         return i === response.index;
