@@ -6,7 +6,6 @@ var figure2 = main.select("#group-2 figure");
 var article = main.select("article");
 var step = article.selectAll(".step");
 
-
 // initialize the scrollama
 var scroller = scrollama();
 
@@ -90,7 +89,7 @@ function updateTreeMap(response){
         ]
         Plotly.redraw('myDiv')
     }
-}
+};
 
 // scrollama event handlers
 function handleStepEnter(response) {
@@ -99,10 +98,22 @@ function handleStepEnter(response) {
     step.classed("is-active", function (d, i) {
         return i === response.index;
     });
-
+    console.log(response)
+    if(response.index){
+        map.addLayer({
+            'id': 'deforestation-layer',
+            'type': 'circle',
+            'source': 'deforestation_circle',
+            'paint': {
+                'circle-radius': 1,
+                'circle-stroke-width': 0.5,
+                'circle-color': 'red',
+                'circle-stroke-color': 'white'
+            }
+        });    
+    }
     // update graphic based on step
-    figure.select("p").text(response.index + 1);
-
+    // figure.select("p").text(response.index + 1);
     updateTreeMap(response)
 }
 
@@ -121,7 +132,7 @@ function init() {
             debug: false
         })
         .onStepEnter(handleStepEnter);
-}
+};
 
 // kick things off
 init();
