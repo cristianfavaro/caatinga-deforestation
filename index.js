@@ -19,7 +19,8 @@ function handleResize() {
     var figureMarginTop = (window.innerHeight - figureHeight) / 2;
 
     figure
-        .style("height", figureHeight + "px")
+        .style("height", "400" + "px")
+        // .style("height", figureHeight + "px")
         .style("top", figureMarginTop + "px");
 
     figure2
@@ -29,7 +30,6 @@ function handleResize() {
     // 3. tell scrollama to update new element dimensions
     scroller.resize();
 }
-
 
 // Treemap data
 var layout = {
@@ -98,8 +98,8 @@ function handleStepEnter(response) {
     step.classed("is-active", function (d, i) {
         return i === response.index;
     });
-    console.log(response)
-    if(response.index){
+    
+    if(response.index === 2){
         map.addLayer({
             'id': 'deforestation-layer',
             'type': 'circle',

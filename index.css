@@ -166,6 +166,11 @@ section {
     margin: 2rem;
 }
 
+article >*{
+    margin: 2rem;
+    padding: 1rem;
+}
+
 #group-2{
     position: relative;
     display: -webkit-box;
