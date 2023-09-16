@@ -95,9 +95,9 @@ function updateTreeMap(response){
 function handleStepEnter(response) {
     // response = { element, direction, index }
     // add color to current step only
-    step.classed("is-active", function (d, i) {
-        return i === response.index;
-    });
+    // step.classed("is-active", function (d, i) {
+    //     return i === response.index;
+    // });
     
     if(response.index === 2){
         map.addLayer({
