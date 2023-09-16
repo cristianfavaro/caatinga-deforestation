@@ -31,62 +31,20 @@ function handleResize() {
     scroller.resize();
 }
 
-// Treemap data
-var layout = {
-    autosize: true,
-    height: 400,
-    margin: {l: 0,r: 0,b: 0,t: 0},
-};
-
-parents = ["", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral"]
-labels = [
-    "Total geral", "Administração Ambiental", "Cadastro Técnico Federal",
-    "Controle ambiental", "Fauna", "Flora", "Licenciamento", "Ordenamento urbano e Contr. patrim.",
-    "Outras", "Pesca", "Qualidade Ambiental", "Unidade de Conservação",
-]
-values = [ 19180161.23, 121500.00, 693200.00, 4227640.00, 1746300.00, 8439992.63, 1136322.50, 413000.00, 1752586.10, 411110.00, 7000.00, 231510.00]
-
-var data = [{
-  type: 'treemap',
-  branchvalues: "total",
-  labels: labels,
-  values: values, 
-  parents: parents,
-  marker: {colors: ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]}
-}]
-
-
-Plotly.newPlot('myDiv', data, layout)
-
 function updateTreeMap(response){
     
     if(response.index == 3){
-        data[0]["labels"] = labels
-        data[0]["parents"] = parents
-        data[0]["values"] = values
+        data[0]["labels"] = labels_2
+        data[0]["parents"] = parents_2
+        data[0]["values"] = values_2
         Plotly.redraw('myDiv')
     }
     
     if(response.index == 4){
-        data[0]["labels"] = [
-            "Total geral",
-            "Sem info",
-            "Amazonia",
-            "Caatinga",
-            "Cerrado",
-            "Costeiro e Marinho",
-            "Mata Atlantica",
-        ]
-        data[0]["parents"] = ["", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral"];
-        data[0]["values"] = [
-            195462387.76,
-            114790225.23,
-            5198078.52,
-            18641061.23,
-            8539399.58,
-            35411234.17,
-            12882389.03,
-        ]
+        data[0]["labels"] = labels
+        data[0]["parents"] = parents
+        data[0]["values"] = values
+
         Plotly.redraw('myDiv')
     }
 };

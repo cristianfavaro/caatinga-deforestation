@@ -12,9 +12,6 @@ const map = new mapboxgl.Map({
 });
 
 
-
-
-
 map.on('load', () => {
     map.resize();
     map.addSource('deforestation_circle', {
