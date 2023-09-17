@@ -76,11 +76,12 @@ a:hover {
   font-size: 15px;
 }
 
-h2 {
+.inter {
   color: #cd853f;
   font-size: 32px;
-  font-weight: bold; /* Adicione negrito */
+  font-weight: bold;
 }
+
 .datawrapper-smRxd-evkrqg {
     color: #cd853f;
     font-weight: 700;
