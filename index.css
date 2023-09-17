@@ -76,12 +76,19 @@ a:hover {
   font-size: 15px;
 }
 
-.inter {
+.h2 {
   color: #cd853f;
   font-size: 32px;
   font-weight: bold; /* Adicione negrito */
 }
-
+.datawrapper-smRxd-evkrqg {
+    color: #cd853f;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
 @keyframes octocat-wave {
   0%,
   100% {
