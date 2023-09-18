@@ -65,10 +65,6 @@ a:hover {
   text-shadow: black;
 }
 
-.intro__dek {
-  color: #8a8a8a;
-}
-
 .link_map {
   color: #cd853f;
   text-decoration: none; /* Remove a sublinhado padrão do link */
@@ -126,7 +122,7 @@ figure {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  background-color: #8a8a8a;
+  background-color: #e4dede;
   z-index: 0;
 }
 
@@ -146,7 +142,7 @@ figure p {
 
 .step {
   margin: 1rem;
-  opacity: 0.9;
+  opacity: 0.5;
   position: relative;
   display: flex;
 }
@@ -156,6 +152,10 @@ figure p {
   padding: 0.5rem;
   background-color: #fff;
   border: 1px solid black;
+}
+
+.step.is-active{
+  opacity: 0.9;
 }
 
 .step > div {
@@ -185,6 +185,16 @@ figure p {
 }
 
 /* MEUS AJUSTES */
+/*  */
+/*  */
+
+#group-3 figure{
+  height: 60vh;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+}
+
 .hidden {
   display: none;
 }
@@ -222,10 +232,4 @@ p {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-}
-
-/* MAP Config */
-
-#map {
-  height: 400px;
 }

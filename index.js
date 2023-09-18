@@ -3,6 +3,7 @@
 var main = d3.select("main");
 var figure = main.select("#group-1 figure");
 var figure2 = main.select("#group-2 figure");
+var figure3 = main.select("#group-3 figure");
 var article = main.select("article");
 var step = article.selectAll(".step");
 
@@ -15,17 +16,25 @@ function handleResize() {
     var stepH = Math.floor(window.innerHeight * 0.75);
     step.style("height", stepH + "px");
 
-    var figureHeight = window.innerHeight / 2;
-    var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+    var figureHeight = window.innerHeight / 1.5;
+    var figureMarginTop = (window.innerHeight - figureHeight) / 1.5;
 
     figure
-        .style("height", "400" + "px")
-        // .style("height", figureHeight + "px")
+        // .style("height", "400" + "px")
+        .style("height", figureHeight + "px")
         .style("top", figureMarginTop + "px");
+
+    figure.select("#map")
+        .style("height", figureHeight + "px")
 
     figure2
         .style("height", "400" + "px")
         .style("top", figureMarginTop + "px");
+
+    figure3
+        .style("height", figureHeight + "px")
+        .style("top", figureMarginTop + "px");
+
 
     // 3. tell scrollama to update new element dimensions
     scroller.resize();
@@ -53,9 +62,9 @@ function updateTreeMap(response){
 function handleStepEnter(response) {
     // response = { element, direction, index }
     // add color to current step only
-    // step.classed("is-active", function (d, i) {
-    //     return i === response.index;
-    // });
+    step.classed("is-active", function (d, i) {
+        return i === response.index;
+    });
     
     if(response.index === 2){
         map.addLayer({
@@ -69,10 +78,10 @@ function handleStepEnter(response) {
                 'circle-stroke-color': 'white'
             }
         });    
-    }
+    };
     // update graphic based on step
     // figure.select("p").text(response.index + 1);
-    updateTreeMap(response)
+    updateTreeMap(response);
 }
 
 function init() {
@@ -86,7 +95,7 @@ function init() {
     scroller
         .setup({
             step: "article .step",
-            offset: 0.33,
+            offset: 0.60,
             debug: false
         })
         .onStepEnter(handleStepEnter);

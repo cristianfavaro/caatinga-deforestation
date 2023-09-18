@@ -41,7 +41,20 @@ var data = [{
   labels: labels,
   values: values, 
   parents: parents,
-  marker: {colors: ["pink", "royalblue", "lightgray", "purple", "cyan", "lightgray", "lightblue"]}
+  marker: {colors: [
+        "#DAA520",
+        "#B8860B",
+        "#8B4513",
+        "#A0522D",
+        "#BC8F8F",
+        "#CD853F",
+        "#D2691E",
+        "#F4A460",
+        "#FFDEAD",
+        "#F5DEB3",
+        "#DEB887",
+        "#D2B48C",
+    ]}
 }]
 
 Plotly.newPlot('myDiv', data, layout)

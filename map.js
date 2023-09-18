@@ -8,9 +8,7 @@ const map = new mapboxgl.Map({
   scrollZoom      : false,
   boxZoom         : false,
   doubleClickZoom : false
-
 });
-
 
 map.on('load', () => {
     map.resize();
