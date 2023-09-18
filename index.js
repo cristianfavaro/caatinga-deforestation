@@ -40,7 +40,7 @@ function handleResize() {
     scroller.resize();
 }
 
-function updateTreeMap(response){
+function handleTreeMap(response){
     
     if(response.index == 3){
         data[0]["labels"] = labels_2
@@ -58,15 +58,8 @@ function updateTreeMap(response){
     }
 };
 
-// scrollama event handlers
-function handleStepEnter(response) {
-    // response = { element, direction, index }
-    // add color to current step only
-    step.classed("is-active", function (d, i) {
-        return i === response.index;
-    });
-    
-    if(response.index === 2){
+function handleMap(response){
+    if(response.index === 1){
         map.addLayer({
             'id': 'deforestation-layer',
             'type': 'circle',
@@ -79,10 +72,33 @@ function handleStepEnter(response) {
             }
         });    
     };
+
+    if(response.index === 2){
+        map.flyTo({
+            center: [-9.63065, -35.72588],
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+        map.setZoom(9);
+        map.scrollZoom.enable();
+        map.boxZoom.enable();
+        map.doubleClickZoom.enable();
+    };
+};
+
+// scrollama event handlers
+function handleStepEnter(response){
+    // response = { element, direction, index }
+    // add color to current step only
+    step.classed("is-active", function (d, i) {
+        return i === response.index;
+    });
+    
     // update graphic based on step
     // figure.select("p").text(response.index + 1);
-    updateTreeMap(response);
-}
+    handleTreeMap(response);
+    handleMap(response);
+};
+
 
 function init() {
 
