@@ -15,6 +15,8 @@ Dados mostram redução da vegetação nativa de 2001 a 2020
 
 ![desmatamento](./imgs/grafico_mapBiomas.png)
 
+https://www.datawrapper.de/_/smRxd/
+
 # Multas ambientais ultrapassam R$19 milhões
 Danos causados à Flora, Controle ambiental e outras causas estão entre os principais responsáveis pela crítica situação em que se encontra a Caatinga. Somente em 2022, as multas somaram mais de R$19 milhões, conforme divulgou, com dados obtidos via LAI, a Fiquem Sabendo. Nos dados também faltam muitas especificações dos tipos de biomas afetados e infrações registradas.
 
