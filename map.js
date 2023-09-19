@@ -25,7 +25,25 @@ map.on('load', () => {
         // Use a URL for the value for the `data` property.
         data: 'https://cristianfavaro.github.io/caatinga-deforestation/json/municipalities_caatinga.json'
     });
-    
+
+    map.addSource('caatinga-poligonos', {
+        type: 'geojson',
+        // Use a URL for the value for the `data` property.
+        data: 'https://cristianfavaro.github.io/caatinga-deforestation/json/caatinga_data.json'
+    });
+
+
+    map.addLayer({
+        'id': 'municipalities-caatinga',
+        'type': 'fill',
+        'source': 'municipalities-caatinga',
+        'layout': {},
+        'paint': {
+            'fill-color': 'yellow', // blue color fill
+            'fill-opacity': 0.7
+        },
+    });   
+
     // map.addLayer({
     //     'id': 'municipalities-caatinga',
     //     'type': 'fill',
