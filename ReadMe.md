@@ -31,18 +31,7 @@ Danos causados à Flora, Controle ambiental e outras causas estão entre os prin
 - caatinga_data.json;
 - municipalities_caatinga.json;
 
-## 2. Criamos as Funções em JavaScript;
 
-
-  
-## 3. Criamos os arquivos de CSS;
-
-
-## 4. Armazenamento dos dados;
-
-
-
-##### Comando específico
 
   
 
