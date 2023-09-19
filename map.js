@@ -8,20 +8,32 @@ const map = new mapboxgl.Map({
   scrollZoom      : false,
   boxZoom         : false,
   doubleClickZoom : false
+
 });
+
 
 map.on('load', () => {
     map.resize();
     map.addSource('deforestation_circle', {
         type: 'geojson',
         // Use a URL for the value for the `data` property.
-        data: 'https://cristianfavaro.github.io/caatinga-deforestation/caatinga.geojson'
+        data: 'https://cristianfavaro.github.io/caatinga-deforestation/json/caatinga.geojson'
     });
 
-    map.addSource('municipalities_caatinga', {
+    map.addSource('municipalities-caatinga', {
         type: 'geojson',
         // Use a URL for the value for the `data` property.
-        data: 'https://cristianfavaro.github.io/caatinga-deforestation/municipalities_caatinga.json'
+        data: 'https://cristianfavaro.github.io/caatinga-deforestation/json/municipalities_caatinga.json'
     });
-    
+
+    map.addLayer({
+        'id': 'municipalities-caatinga',
+        'type': 'fill',
+        'source': 'municipalities-caatinga',
+        'layout': {},
+        'paint': {
+            'fill-color': 'yellow', // blue color fill
+            'fill-opacity': 0.7
+        }
+    });   
 });
