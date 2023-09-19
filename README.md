@@ -10,13 +10,15 @@ De acordo com dados coletados, de 1985 a 2022, a Caatinga perdeu em vegetação 
 
 ![Caatinga](./image/caatinga_mapa.png)
 
-##Acumulado de desmatamento na Caatinga
+# Acumulado de desmatamento na Caatinga
 Dados mostram redução da vegetação nativa de 2001 a 2020
-![Caatinga](./image/grafico_mapBiomas.png)
 
-##Multas ambientais ultrapassam R$19 milhões
+![desmatamento](./image/grafico_mapBiomas.png)
+
+# Multas ambientais ultrapassam R$19 milhões
 Danos causados à Flora, Controle ambiental e outras causas estão entre os principais responsáveis pela crítica situação em que se encontra a Caatinga. Somente em 2022, as multas somaram mais de R$19 milhões, conforme divulgou, com dados obtidos via LAI, a Fiquem Sabendo. Nos dados também faltam muitas especificações dos tipos de biomas afetados e infrações registradas.
-![Caatinga](./image/newplot.png)
+
+![MultasAmbientais](./image/newplot.png)
 
 ## 1. Criamos as Tela de HTML;
 
