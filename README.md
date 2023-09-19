@@ -1,7 +1,7 @@
 # 100% brasileiro, Caatinga sofre efeitos do desmatamento
 Bioma já teve quase metade do seu território degradado
 
-![Tela inicial](./imagem/caatinga.png)
+![Tela inicial](./image/caatinga.png)
 
 
 
