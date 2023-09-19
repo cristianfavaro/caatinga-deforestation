@@ -60,17 +60,20 @@ function handleTreeMap(response){
 
 function handleMap(response){
     if(response.index === 1){
-        map.addLayer({
-            'id': 'deforestation-layer',
-            'type': 'circle',
-            'source': 'deforestation_circle',
-            'paint': {
-                'circle-radius': 1,
-                'circle-stroke-width': 0.5,
-                'circle-color': 'red',
-                'circle-stroke-color': 'white'
-            }
-        });    
+        if (!map.getLayer("deforestation-layer")) {
+            map.addLayer({
+                'id': 'deforestation-layer',
+                'type': 'circle',
+                'source': 'deforestation_circle',
+                'paint': {
+                    'circle-radius': 1,
+                    'circle-stroke-width': 0.5,
+                    'circle-color': 'red',
+                    'circle-stroke-color': 'white'
+                }
+            });
+        }
+            
     };
 
     if(response.index === 2){
