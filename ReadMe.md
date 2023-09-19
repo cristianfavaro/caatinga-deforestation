@@ -22,7 +22,7 @@ Danos causados à Flora, Controle ambiental e outras causas estão entre os prin
 
 ![MultasAmbientais](./imgs/newplot.png)
 
-## 1. Arquivos utilizados para a composição do projeto;
+# Arquivos utilizados para a composição do projeto;
 
 - index.css;
 - index.html;
@@ -32,6 +32,9 @@ Danos causados à Flora, Controle ambiental e outras causas estão entre os prin
 - caatinga.geojson;
 - caatinga_data.json;
 - municipalities_caatinga.json;
+
+# Material de Apoio;
+https://github.com/russellsamora/scrollama
 
 
 
