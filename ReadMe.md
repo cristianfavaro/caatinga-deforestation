@@ -20,9 +20,17 @@ Danos causados à Flora, Controle ambiental e outras causas estão entre os prin
 
 ![MultasAmbientais](./imgs/newplot.png)
 
-## 1. Criamos as Tela de HTML;
+## 1. Arquivos utilizados para a composição do projeto;
 
-  
+- index.css;
+- index.html;
+- index.js;
+- map.js;
+- treemap.js;
+- caatinga.geojson;
+- caatinga_data.json;
+- municipalities_caatinga.json;
+
 ## 2. Criamos as Funções em JavaScript;
 
 
