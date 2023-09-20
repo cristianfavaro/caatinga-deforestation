@@ -42,14 +42,14 @@ function handleResize() {
 
 function handleTreeMap(response){
     
-    if(response.index == 3){
+    if(response.index == 5){
         data[0]["labels"] = labels_2
         data[0]["parents"] = parents_2
         data[0]["values"] = values_2
         Plotly.redraw('myDiv')
     }
     
-    if(response.index == 4){
+    if(response.index == 6){
         data[0]["labels"] = labels
         data[0]["parents"] = parents
         data[0]["values"] = values

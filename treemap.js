@@ -6,9 +6,9 @@ var layout = {
     margin: {l: 0,r: 0,b: 0,t: 0},
 };
 
-parents = ["", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral"]
+parents = ["", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga", "Total Multas - Caatinga"]
 labels = [
-    "Total geral", "Administração Ambiental", "Cadastro Técnico Federal",
+    "Total Multas - Caatinga", "Administração Ambiental", "Cadastro Técnico Federal",
     "Controle ambiental", "Fauna", "Flora", "Licenciamento", "Ordenamento urbano e Contr. patrim.",
     "Outras", "Pesca", "Qualidade Ambiental", "Unidade de Conservação",
 ]
@@ -16,7 +16,7 @@ values = [ 19180161.23, 121500.00, 693200.00, 4227640.00, 1746300.00, 8439992.63
 
 
 labels_2 = [
-    "Total geral",
+    "Total Multas / Bioma",
     "Sem info",
     "Amazonia",
     "Caatinga",
@@ -24,7 +24,7 @@ labels_2 = [
     "Costeiro e Marinho",
     "Mata Atlantica",
 ]
-parents_2 = ["", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral", "Total geral"];
+parents_2 = ["", "Total Multas / Bioma", "Total Multas / Bioma", "Total Multas / Bioma", "Total Multas / Bioma", "Total Multas / Bioma", "Total Multas / Bioma"];
 values_2 = [
     195462387.76,
     114790225.23,
