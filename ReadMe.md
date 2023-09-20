@@ -44,15 +44,3 @@ https://alerta.mapbiomas.org/relatorio
 Projeto apresentado nas disciplinas de Programação Web, ministrada pelo professor Vinicius Sueiro, e Geojornalismo, por Bernardo Loureiro. As aulas fizeram parte do segundo módulo da turma 2022/23 do Master em Jornalismo de Dados do Insper. 
 
 Código e texto: @cristianfavaro, @Grazielafranca31 e @GiseliAraujo
-
-
-
-
-
-
-
-
-
-
-
-
