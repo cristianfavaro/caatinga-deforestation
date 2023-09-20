@@ -11,7 +11,8 @@
     box-sizing: border-box;
     position: relative;
 }
-.img span{
+.img span,
+span.img{
     font-size: x-small;
     position: absolute;
     right: 0;
