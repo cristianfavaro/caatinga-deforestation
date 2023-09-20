@@ -59,34 +59,44 @@ function handleTreeMap(response){
 };
 
 function handleMap(response){
-    if(response.index === 1){
-        // if (!map.getLayer("deforestation-layer")) {
-        //     map.addLayer({
-        //         'id': 'deforestation-layer',
-        //         'type': 'circle',
-        //         'source': 'deforestation_circle',
-        //         'paint': {
-        //             'circle-radius': 1,
-        //             'circle-stroke-width': 0.5,
-        //             'circle-color': 'red',
-        //             'circle-stroke-color': 'white'
-        //         }
-        //     });
-        // }
+    if(response.index === 0){
+        if (!map.getLayer("deforestation-layer")) {
+            map.addLayer({
+                'id': 'deforestation-layer',
+                'type': 'circle',
+                'source': 'deforestation_circle',
+                'paint': {
+                    'circle-radius': 1,
+                    'circle-stroke-width': 0.5,
+                    'circle-color': 'red',
+                    'circle-stroke-color': 'white'
+                }
+            });
+        }
     };
 
 
-    if(response.index === 2){
+    if(response.index === 3){
         map.removeLayer('municipalities-caatinga');
         map.flyTo({
+            center: [-41.9868501, -10.542007], 
+            // center: [-44.6373115, -10.2241827], -10.542007,-41.9868501
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+        map.setZoom(6);
+    };
+
+    if(response.index === 4){
+        map.removeLayer('deforestation-layer');
+        
+        map.flyTo({
+            // center: [-41.9868501, -10.542007], 
             center: [-44.6373115, -10.2241827],
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         map.setZoom(9);
-        map.scrollZoom.enable();
-        map.boxZoom.enable();
-        map.doubleClickZoom.enable();
     };
+
 };
 
 // scrollama event handlers

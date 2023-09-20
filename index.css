@@ -123,6 +123,7 @@ figure {
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   background-color: #e4dede;
+  min-height: 300px;
   z-index: 0;
 }
 
@@ -145,6 +146,7 @@ figure p {
   opacity: 0.5;
   position: relative;
   display: flex;
+  pointer-events: none;
 }
 
 .step p {
@@ -188,6 +190,15 @@ figure p {
 /*  */
 /*  */
 
+#group-1 button{
+  margin: 0.5rem;
+  position: absolute;
+  z-index: 2;
+}
+
+#biomaEx{
+  height: 30vh;
+}
 
 #group-3 figure{
   height: 60vh;
