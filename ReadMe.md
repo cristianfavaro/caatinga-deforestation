@@ -33,13 +33,17 @@ Danos causados à Flora, Controle ambiental e outras causas estão entre os prin
 - caatinga_data.json;
 - municipalities_caatinga.json;
 
-# Material de Apoio;
+# Material de Apoio
+
 https://github.com/russellsamora/scrollama
+https://docs.mapbox.com/mapbox.js/api/v3.3.1/
+http://terrabrasilis.dpi.inpe.br/app/dashboard/deforestation/biomes/caatinga/increments
+https://alerta.mapbiomas.org/relatorio
 
+# Sobre
+Projeto apresentado nas disciplinas de Programação Web, ministrada pelo professor Vinicius Sueiro, e Geojornalismo, por Bernardo Loureiro. As aulas fizeram parte do segundo módulo da turma 202/23 do Master em Jornalismo de Dados do Insper. 
 
-
-  
-
+Código e texto: @cristianfavaro, @Grazielafranca31 e @GiseliAraujo
 
 
 
