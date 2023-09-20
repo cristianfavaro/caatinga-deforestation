@@ -60,25 +60,26 @@ function handleTreeMap(response){
 
 function handleMap(response){
     if(response.index === 1){
-        if (!map.getLayer("deforestation-layer")) {
-            map.addLayer({
-                'id': 'deforestation-layer',
-                'type': 'circle',
-                'source': 'deforestation_circle',
-                'paint': {
-                    'circle-radius': 1,
-                    'circle-stroke-width': 0.5,
-                    'circle-color': 'red',
-                    'circle-stroke-color': 'white'
-                }
-            });
-        }
-            
+        // if (!map.getLayer("deforestation-layer")) {
+        //     map.addLayer({
+        //         'id': 'deforestation-layer',
+        //         'type': 'circle',
+        //         'source': 'deforestation_circle',
+        //         'paint': {
+        //             'circle-radius': 1,
+        //             'circle-stroke-width': 0.5,
+        //             'circle-color': 'red',
+        //             'circle-stroke-color': 'white'
+        //         }
+        //     });
+        // }
     };
 
+
     if(response.index === 2){
+        map.removeLayer('municipalities-caatinga');
         map.flyTo({
-            center: [-9.63065, -35.72588],
+            center: [-44.6373115, -10.2241827],
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
         });
         map.setZoom(9);

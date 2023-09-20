@@ -33,16 +33,28 @@ map.on('load', () => {
     });
 
 
+    // map.addLayer({
+    //     'id': 'municipalities-caatinga',
+    //     'type': 'fill',
+    //     'source': 'municipalities-caatinga',
+    //     'layout': {},
+    //     'paint': {
+    //         'fill-color': 'yellow', // blue color fill
+    //         'fill-opacity': 0.7
+    //     },
+    // });   
+
     map.addLayer({
-        'id': 'municipalities-caatinga',
+        'id': 'caatinga-poligonos',
         'type': 'fill',
-        'source': 'municipalities-caatinga',
+        'source': 'caatinga-poligonos',
         'layout': {},
         'paint': {
-            'fill-color': 'yellow', // blue color fill
-            'fill-opacity': 0.7
+            'fill-color': 'read', // blue color fill
+            'fill-opacity': 1
         },
     });   
+
 
     // map.addLayer({
     //     'id': 'municipalities-caatinga',
